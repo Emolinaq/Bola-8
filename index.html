@@ -1,0 +1,119 @@
+<html>
+ <head>
+  <title>Preguntale a la suerte</title>
+
+  <script type="text/javascript">
+    var answers = ["Ciertamente", 
+                   "Si crees en ello", 
+                   "Sin ninguna duda", 
+                   "SI definitivo",
+                   "Tal vez te lamentes", 
+                   "Como lo veo, si", 
+                   "Comunmente", 
+                   "Querido dios", 
+                   "Si, sabes el punto de si?",
+                   "No cuentes con ello", 
+                   "Mi respuesta es no",
+                   "Mi codigo dice que no", 
+                   "Puede que no sea bueno",
+                   "Horroroso", 
+                   "No recibi tu pregunta", 
+                   "Preguntame luego, estoy en el baño", 
+                   "Mejor te esperas",
+                   "Si lo predigo ahora la lio.", 
+                   "Consentrate y escribe como persona, no entendi"];
+    
+    window.onload = function() {
+       var eight = document.getElementById("eight");
+       var answer = document.getElementById("answer");
+       var eightball = document.getElementById("eight-ball");
+       var question = document.getElementById("question");
+       
+       eightball.addEventListener("click", function() {
+         if (question.value.length < 1) {
+           alert('Ingresa una pregunta!');
+         } else {
+           eight.innerText = "";
+           var num = Math.floor(Math.random() * Math.floor(answers.length));
+           answer.innerText = answers[num];
+         }
+
+       });
+       
+    };
+  </script>
+  
+  <style type="text/css">
+    h1 { font-weight: 100; font-size: 2.5em;}
+    
+    #content { 
+     width: 600px; 
+     margin: 0 auto; 
+     margin-top: 50px; 
+     border: 0px dotted black;       
+     text-align: center; 
+     font-family: 'Helvetica Neue', arial; 
+     font-weight: 100;
+   }
+    
+    div.eight-ball {
+      background-color: black;
+      border: 2px solid black;
+      border-radius: 50%;
+      width: 300px;
+      height: 300px;
+      margin: 0 auto;
+      margin-bottom: 30px;
+      margin-top: 30px;
+    }
+    
+    div.answer {
+      background-color: #333;
+      border: 1px solid #333;
+      border-radius: 50%;
+      width: 50%;
+      height: 50%;
+      margin: 25% auto;
+    }
+    
+    p#eight {
+      font-size: 5em;
+      margin: 20% auto;
+      color: white;
+    }
+    
+    p#answer {
+      padding: 23px;
+      color: lightblue;
+      letter-spacing: 1px;
+      font-size:14px;
+    }
+    
+    #question {
+      margin: 20px;
+      padding: 10px;
+      width: 400px;
+      font-size:22px;
+    }
+    
+    #info {
+      font-size: 22px;
+    }
+    
+  </style>
+  
+ </head>
+ <body>
+  <div id="content">
+    <h1>Preguntale a la suerte</h1>
+    <p id="info">Realiza una pregunta y despues toca el numero 8, la respuesta puede que te sorprenda</p>
+    <input type="text" id="question" />
+    <div id="eight-ball" class="eight-ball">
+      <div class="answer">
+        <p id="eight">8</p>
+        <p id="answer"></p>
+      </div>
+    </div>
+  </div>
+ </body>
+</html>
